@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+option go_package = "./hello;hello";
+package hello;
+
+message Student {
+    string name = 1;
+    enum Gender{
+        FEMALE = 0;
+        MALE = 1;
+    }
+    Gender gender = 2;
+    repeated int32 scores = 3; //repeated:表示字段可重复，用来表示go的数组类型
+}
+
+message Foo {
+    reserved 2,15,9 to 11;
+    reserved "foo","bar";
+}
+
+message EnumAllowAlias {
+  enum Status {
+    option allow_alias = true;      //别名（Alias），允许为不同的枚举值赋予相同的标识符，称之为别名，需要打开allow_alias选项。
+    UNKOWN = 0;
+    STARTED = 1;
+    RUNNING = 1;
+  }
+}
+
+message SearchResponse {
+  repeated Result results = 1;
+}
+
+message Result {
+  string url = 1;
+  string title = 2;
+  repeated string snippets = 3;
+}
