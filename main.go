@@ -4,9 +4,9 @@ import (
 	"database/sql"
 	"fmt"
 	"gee/geecache"
+	_ "github.com/mattn/go-sqlite3"
 	"log"
 	"net/http"
-	_ "github.com/mattn/go-sqlite3"
 )
 
 var db = map[string]string{
@@ -96,6 +96,8 @@ func main() {
 	//if test.GetName() != newTest.GetName(){
 	//	log.Fatal("data mismatch %q != %q", test.GetName(), newTest.GetName())
 	//}
+
+	//test
 
 	db, _ := sql.Open("sqlite3", "gee.db")
 	defer func() { _ = db.Close() }()
