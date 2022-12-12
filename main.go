@@ -3,9 +3,10 @@ package main
 import (
 	"database/sql"
 	"fmt"
-	"gee_demo/geecache"
+	"gee/geecache"
 	"log"
 	"net/http"
+	_ "github.com/mattn/go-sqlite3"
 )
 
 var db = map[string]string{

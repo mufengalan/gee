@@ -2,8 +2,8 @@ package geecache
 
 import (
 	"fmt"
-	pb "gee_demo/geecache/geecachepb"
-	"gee_demo/geecache/singleflight"
+	pb "gee/geecache/geecachepb"
+	"gee/geecache/singleflight"
 	"log"
 	"sync"
 )

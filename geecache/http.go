@@ -2,7 +2,7 @@ package geecache
 
 import (
 	"fmt"
-	"gee_demo/geecache/consistenthash"
+	"gee/geecache/consistenthash"
 	"github.com/golang/protobuf/proto"
 	"io/ioutil"
 	"log"
@@ -10,7 +10,7 @@ import (
 	"net/url"
 	"strings"
 	"sync"
-	pb "gee_demo/geecache/geecachepb"
+	pb "gee/geecache/geecachepb"
 )
 
 const (

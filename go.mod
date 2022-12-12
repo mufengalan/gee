@@ -1,11 +1,11 @@
-module gee_demo
+module gee
 
 go 1.16
 
 require (
-	gee v0.0.0
-	github.com/golang/protobuf v1.5.2 // indirect
-	google.golang.org/protobuf v1.28.1 // indirect
+	github.com/golang/protobuf v1.5.2
+	github.com/mattn/go-sqlite3 v1.14.16 // indirect
+	google.golang.org/protobuf v1.28.1
 )
 
 replace gee => ./gee
