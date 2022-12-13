@@ -16,6 +16,7 @@ func NewEngine(driver, source string) (e *Engine, err error) {
 		log.Error(err)
 		return
 	}
+	//检测数据库是否可以正常连接
 	if err = db.Ping(); err != nil {
 		log.Error(err)
 		return

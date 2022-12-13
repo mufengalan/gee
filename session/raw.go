@@ -34,7 +34,7 @@ func (s *Session) Raw(sql string, values ...interface{}) *Session {
 	return s
 }
 
-func (s *Session) Exec(result sql.Result, err error) {
+func (s *Session) Exec() (result sql.Result, err error) {
 	defer s.Clear()
 	log.Info(s.sql.String(), s.sqlVars)
 	if result, err = s.DB().Exec(s.sql.String(), s.sqlVars...); err != nil {
