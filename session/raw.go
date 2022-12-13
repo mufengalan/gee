@@ -48,3 +48,12 @@ func (s *Session) QueryRow() *sql.Row {
 	log.Info(s.sql.String(), s.sqlVars)
 	return s.DB().QueryRow(s.sql.String(), s.sqlVars...)
 }
+
+func (s *Session) QueryRows() (rows *sql.Rows, err error){
+	defer s.Clear()
+	log.Info(s.sql.String(), s.sqlVars)
+	if rows, err = s.DB().Query(s.sql.String(),s.sqlVars...); err != nil {
+		log.Error(err)
+	}
+	return
+}
